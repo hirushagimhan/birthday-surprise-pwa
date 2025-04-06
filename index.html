@@ -1,0 +1,75 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#ff4081" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <title>Surprise Amma!</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom, #ffe6f0, #fff0f5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+    .container {
+      max-width: 600px;
+      padding: 30px;
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    }
+    h1 {
+      font-size: 2rem;
+      color: #e91e63;
+      animation: bounce 1s infinite alternate;
+    }
+    p {
+      font-size: 1.2rem;
+      margin: 20px 0;
+      color: #444;
+    }
+    button {
+      padding: 15px 25px;
+      font-size: 1rem;
+      background-color: #ff4081;
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+    }
+    @keyframes bounce {
+      from { transform: translateY(0); }
+      to { transform: translateY(-10px); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Surprise Amma! 🎉</h1>
+    <p>Happy Birthday! Tap below to see your special gift 😍</p>
+    <button onclick="goToCard()">Check Your Other Surprise 🏰</button>
+  </div>
+
+  <script>
+    function goToCard() {
+      window.location.href = "https://hirushagimhan.github.io/birthday-card/";
+    }
+
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(() => console.log('Service Worker Registered'))
+        .catch((err) => console.error('SW Error', err));
+    }
+  </script>
+</body>
+</html>
